@@ -1,0 +1,48 @@
+.title1{
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 32px;
+    font-family: var(--font-cinzel);
+}
+
+.title2{
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 28px;
+    font-family: var(--font-cinzel);
+}
+
+.title3{
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 22px;
+    font-family: var(--font-cinzel);
+}
+
+.title4{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    font-family: var(--Font-Raleway);
+}
+
+.span{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+    font-family: var(--font-cinzel);
+}
+
+.strong{
+    font-size: 600;
+    font-size: 17px;
+    line-height: 19px;
+    font-family: var(--font-cinzel);
+}
+
+.paragraphy{
+    font-size: clamp(12px, 15px, 20px);
+    font-weight: 400;
+    line-height: 18px;
+    font-family: var(--font-raleway);
+}
