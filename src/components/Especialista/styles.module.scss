@@ -1,0 +1,82 @@
+.section{
+    width: 100%;
+    height: 700px;
+    background: var(--Brown-transparent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .especialista{
+        background: var(--Brown-transparent);
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 10px;
+        position: absolute;
+        top: -68px;
+        right: 150px;
+        z-index: 2;
+    
+        .cardEspecialista{
+            width: 25%;
+            height: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            gap: 20px;
+
+            p{
+                color: var(--BrownDark-Eliane);
+            }
+    
+            img{
+                width: 50px;
+                z-index: 2;
+            }
+        }
+
+    }
+
+    .line {
+        width: 10%;
+        margin: 0 auto;
+        height: 3px;
+        background: linear-gradient(-1855deg, var(--Yellow-Eliane), var(--Brown-Eliane));
+        z-index: 3;
+        margin-top: 420px;
+    }
+
+    .beleza{
+        margin: 0 auto;
+        width: 60%;
+        text-align: center;
+        gap: 20px;
+
+        h4 {
+            margin: 40px;
+            font-size: 21px;
+            color: var(--black);
+        }
+
+        button{
+            width: 30%;
+            height: 40px;
+            background: linear-gradient(-1855deg, var(--Green-Eliane), var(--Blue-Eliane));
+            border: none;
+            border-radius: 20px;
+            
+            a{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                color: var(--Light-Cinzel);
+                text-decoration: none;
+            }
+        }
+    }
+}

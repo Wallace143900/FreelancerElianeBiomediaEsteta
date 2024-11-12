@@ -2,8 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Yellowtail&display=swap');
+
 :root{
+    --BrownDark-Eliane: #926c2b;
     --Brown-Eliane: #AA7E32;
+    --Brown-transparent: #fcf3e3;
     --Yellow-Eliane: #EBC65E;
     --Green-Eliane: #196E67;
     --Blue-Eliane: #34E4D5;
@@ -11,8 +15,9 @@
     --black: #252525;
 
     --Light-Cinzel: #eeeeee;
-    --Dark-Cinzel: #dfdfdf;
+    --Dark-Cinzel: #c7c7c7;
 
     --font-cinzel: "Cinzel", sans-serif;
     --font-raleway:'Raleway', sans-serif;
+    --font-yellowtail:'Yellowtail', sans-serif;
 }
