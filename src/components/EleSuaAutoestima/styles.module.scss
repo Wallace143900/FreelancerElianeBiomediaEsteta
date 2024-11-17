@@ -5,6 +5,18 @@ section{
     width: 100%;
     position: relative;
 
+    @media (max-width: 1024px) {
+        height: 750px;
+    }
+
+    @media (max-width: 768px) {
+        height: 650px;
+    }
+
+    @media (max-width: 425px) {
+       height: 640px;
+    }
+
     img{
         z-index: 1;
         width: 100%;
@@ -28,10 +40,16 @@ section{
         width: 100%;
         position: absolute;
         z-index: 2;
+        position: fixed;
+        z-index: 5;
 
         @media (max-width: 768px) {
                  
         }
+
+        &.scrolled {
+            background-color: var(--Brown-transparent); // Cor quando o header está rolado
+          }
         
         .nav {
             display: flex;
@@ -54,7 +72,11 @@ section{
                 }
 
                 @media (max-width: 425px) {
-                    width: 140px;
+                    width: 120px;
+                }
+
+                @media (max-width: 320px) {
+                    width: 100px;
                 }
             }
     
@@ -63,11 +85,15 @@ section{
     
                 .whatsappLink {
                     width: 20%;
-                    
+
                     .iconZap {
                         font-size: 40px;
                         color: var(--Brown-Eliane);
                         margin-bottom: 4px;
+
+                        @media (max-width: 320px) {
+                            width: 20px;
+                        }
 
                         &:hover {
                             color: var(--Yellow-Eliane);
@@ -85,6 +111,22 @@ section{
 
                 @media (max-width: 768px) {
                     margin-left: 400px;
+                }
+
+                @media (max-width: 767px) {
+                    margin-left: 60%;
+                }
+
+                @media (max-width: 700px) {
+                    margin-left: 50%;
+                }
+
+                @media (max-width: 481px) {
+                    margin-left: 150px;
+                }
+
+                @media (max-width: 450px) {
+                    margin-left: 90px;
                 }
 
                 @media (max-width: 425px) {
@@ -185,8 +227,12 @@ section{
                         right: 27px;
                     }
 
-                    @media (max-width: 425px) {
-                        right: 45px;
+                    @media (max-width: 375px) {
+                        right: 30px;
+                    }
+
+                    @media (max-width: 320px) {
+                        right: 25px;
                     }
                 }
                 
@@ -241,6 +287,18 @@ section{
             width: 25%;
         }
 
+        @media (max-width: 425px) {
+            width: 25%;
+        }
+
+        @media (max-width: 375px) {
+            width: 30%;
+        }
+
+        @media (max-width: 320px) {
+            width: 30%;
+        }
+
         
         a{
             color: var(--Brown-Eliane);
@@ -248,6 +306,7 @@ section{
             display: flex;
             justify-content: center;
             align-items: center;
+            text-decoration: none;
 
             .iconZap{
                 
@@ -255,11 +314,19 @@ section{
                 @media (max-width: 768px) {
                     width: 15px;
                 }
+
+                @media (max-width: 425px) {
+                    width: 10px;
+                }
             }
             
             &:hover{
                 transition: 0.2s;
                 color: #E1306C;
+            }
+
+            @media (max-width: 425px) {
+                font-size: 6px;
             }
         }
         
@@ -267,6 +334,14 @@ section{
             background: linear-gradient(-1855deg, var(--Brown-Eliane), var(--Yellow-Eliane));
             width: 20%;
             height: 5px;
+
+            @media (max-width: 425px) {
+                height: 3px;
+            }
+
+            @media (max-width: 320px) {
+                height: 2px;
+            }
         }
     }
     
@@ -293,15 +368,16 @@ section{
         }
 
         @media (max-width: 425px) {
-            right: 44px;
+            right: 38px;
         }
 
         @media (max-width: 375px) {
-            top: 320px;
+            top: 380px;
+            right: 33px;
         }
 
         @media (max-width: 320px) {
-            right: 32px;
+            right: 30px;
         }
 
         .lineLeft{
@@ -339,6 +415,10 @@ section{
                 z-index: 1;
             }
             
+            @media (max-width: 425px) {
+                width: 55%;
+            }
+
             #paragraphy{
                 margin-top: 25px;
                 color: var(--Light-Cinzel);
@@ -354,11 +434,11 @@ section{
 
                 @media (max-width: 425px) {
                     font-size: 20px;
-                    color: var(--black);
+                    color: var(--Light-Cinzel);
                 }
 
                 @media (max-width: 320px) {
-                    font-size: 18px;
+                    font-size: 16px;
                 }
             }
         
@@ -385,6 +465,7 @@ section{
 
                 @media (max-width: 320px) {
                     font-size: 1rem;
+                    line-height: 30px;
                 }
             }
         
@@ -401,16 +482,17 @@ section{
                 }
 
                 @media (max-width: 425px) {
-                    font-size: 25px;
+                    font-size: 23px;
+                    width: 100%;
                     color: var(--black);
                 }
 
                 @media (max-width: 375px) {
-                    font-size: 23px;
+                    font-size: 20px;
                 }
 
                 @media (max-width: 320px) {
-                    font-size: 19px;
+                    font-size: 17px;
                 }
             }
         
