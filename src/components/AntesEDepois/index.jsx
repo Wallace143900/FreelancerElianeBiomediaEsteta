@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AntesDepois } from "../../data/antesEDepois";
 import styles from "./styles.module.scss";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
@@ -17,6 +17,15 @@ export const AntesEDepoisResults = () => {
             prevIndex === AntesDepois.length - 1 ? 0 : prevIndex + 1
         );
     };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            handleNext();
+        }, 5000);
+
+        // Limpa o intervalo ao desmontar o componente
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <section className={styles.section}>
@@ -41,7 +50,7 @@ export const AntesEDepoisResults = () => {
                         </button>
                     </div>
                     <div className={styles.imageName}>
-                        <p className="paragraphy">{AntesDepois[currentIndex].name}</p>
+                        <p className="paragraphy" id={styles.paragrafo}>{AntesDepois[currentIndex].name}</p>
                     </div>
                 </div>
                 {/* Nome da imagem fora do carrossel */}
