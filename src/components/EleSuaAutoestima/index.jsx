@@ -11,7 +11,7 @@ export const EleveAutoestima = () => {
 
     const { toggleMenu, isMenuOpen } = useContext(UserContext);
 
-    const whatsappMessage = "Olá, gostaria de de saber mais sobre o curso e agendar um horário.";
+    const whatsappMessage = "Olá, gostaria de de saber mais sobre seus cursos e serviços para agendar um horário.";
     const whatsappNumber = "5521969096543";
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 

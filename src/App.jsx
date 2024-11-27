@@ -5,6 +5,7 @@ import { Especialista } from "./components/Especialista";
 import { AntesEDepoisResults } from "./components/AntesEDepois";
 import OfCourse from "./components/OfCourse";
 import { AboutMe } from "./components/AboutMe";
+import { Depoiments } from "./components/Depoiments";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <AntesEDepoisResults />
       <OfCourse />
       <AboutMe />
+      <Depoiments />
     </UserProvider>
     </>
   )

@@ -1,8 +1,7 @@
-// src/OfCourse/DescriptionCourse/DescriptionCourse.jsx
 import React, { useState } from 'react';
 import styles from './styles.module.scss';
 
-const DescriptionCourse = ({ title, content }) => {
+const DescriptionCourse = ({ title, content, content2, isService }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
@@ -17,7 +16,18 @@ const DescriptionCourse = ({ title, content }) => {
           {isOpen ? '▲' : '▼'}
         </span>
       </button>
-      {isOpen && <p className={styles.courseContent}>{content}</p>}
+      {isOpen && (
+        <div className={styles.courseContent}>
+          {/* Renderiza o content com o estilo adequado (700 para cursos, 500 para serviços) */}
+          <p 
+            className={`paragraphy ${isService ? styles.serviceDescription : styles.courseDays}`} 
+            id={styles.p}
+          >
+            {content}
+          </p>
+          {content2 && <p className='paragraphy' id={styles.pp}>{content2}</p>}
+        </div>
+      )}
     </div>
   );
 };

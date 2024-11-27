@@ -1,5 +1,23 @@
 .descriptionCourse {
     margin-bottom: 15px;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-image: url("../../../public/Dra.Eliane/Course.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    @media (min-width: 500px) AND (max-width: 768px) {
+      width: 70%;
+    }
+
+    @media (max-width: 425px) {
+      width: 80%;
+    }
+
+    @media (max-width: 375px) {
+      width: 90%;
+    }
   }
   
   .courseTitle {
@@ -14,7 +32,26 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-family: var(--font-cinzel);
     font-size: 18px;
+
+    @media (min-width: 500px) AND (max-width: 768px) {
+      height: 60px;
+    }
+
+    @media (max-width: 425px) {
+      font-size: 16px;
+      height: 60px;
+      text-align: start;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 12px;
+    }
   
     &:focus {
       outline: none;
@@ -33,5 +70,49 @@
     border-top: none;
     border-radius: 0 0 5px 5px;
     margin-top: -1px;
+    
+    .courseDays {
+      font-weight: 700;
+    }
+    
+    .serviceDescription {
+      font-weight: 500;
+    }
+    
+    #p{
+      text-align: start;
+      font-weight: 00;
+      color: var(--black);
+      
+      @media (max-width: 425px) {
+        font-size: 14px;
+      }
+  
+      @media (max-width: 375px) {
+        font-size: 12px;
+      }
+      
+      @media (max-width: 320px) {
+        font-size: 10px;
+      }
+    }
+
+    #pp{
+      text-align: start;
+      color: var(--black);
+      font-weight: 500;
+
+      @media (max-width: 425px) {
+        font-size: 14px;
+      }
+  
+      @media (max-width: 375px) {
+        font-size: 12px;
+      }
+  
+      @media (max-width: 320px) {
+        font-size: 10px;
+      }
+    }
   }
   
