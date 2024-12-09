@@ -1,0 +1,150 @@
+footer{
+    width: 100%;
+    height: auto;
+
+    .container{
+        width: 85%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        margin-bottom: 40px;
+
+        .left{
+            width: 30%;
+
+            img{
+                width: 200px;
+            }
+        }
+
+        .middle{
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+
+            h3{
+                color: var(--black);
+                font-weight: 600;
+            }
+
+            .bottom{
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                gap: 15px;
+                margin-top: 30px;
+
+                .whats{
+                    display: flex;
+                    gap: 10px;
+
+                    color: var(--Blue-Eliane);
+                    
+                    .icon{
+                        color: var(--Blue-Eliane);
+                    }
+
+                    a{
+                        color: var(--Blue-Eliane);
+
+                        &:hover{
+                            color: var(--Green-Eliane);
+                        }
+                    }
+
+                }
+
+                .email{
+                    display: flex;
+                    gap: 10px;
+
+                    a{
+                        color: var(--black);
+                    }
+
+                    .icon{
+                        color: var(--Blue-Eliane);
+                    }
+                }
+
+                .location{
+                    display: flex;
+                    gap: 10px;
+
+                    a{
+                        color: var(--black);
+                    }
+
+                    .icon{
+                        color: var(--Blue-Eliane);
+                    }
+                }
+
+                .insta{
+                    display: flex;
+                    gap: 10px;
+
+                    .icon{
+                        color: var(--Blue-Eliane);
+                    }
+
+                    a{
+                        color: var(--Blue-Eliane);
+
+                        &:hover{
+                            color: var(--Green-Eliane);
+                        }
+                    }
+                }
+            }
+        }
+
+        .right{
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h3{
+                color: var(--black);
+                font-weight: 600;
+            }
+
+            .bottom2{
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                gap: 10px;
+                margin-top: 30px;
+
+                li{
+                    color: var(--black);
+                }
+            }
+        }
+    }
+
+    .reservado{
+        width: 100%;
+        height: 50px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(-950deg, var(--Green-Eliane), var(--Blue-Eliane));
+
+        p{
+            color: var(--Light-Cinzel);
+        }
+
+        a{
+            color: var(--black);
+            text-decoration: none;
+        }
+    }
+}

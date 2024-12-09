@@ -6,6 +6,7 @@ import { AntesEDepoisResults } from "./components/AntesEDepois";
 import OfCourse from "./components/OfCourse";
 import { AboutMe } from "./components/AboutMe";
 import { Depoiments } from "./components/Depoiments";
+import { Footer } from "./components/Footer";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <OfCourse />
       <AboutMe />
       <Depoiments />
+      <Footer />
     </UserProvider>
     </>
   )
