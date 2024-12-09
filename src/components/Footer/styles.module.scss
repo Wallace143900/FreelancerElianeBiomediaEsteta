@@ -12,11 +12,27 @@ footer{
         margin-top: 40px;
         margin-bottom: 40px;
 
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
         .left{
             width: 30%;
 
+            @media (max-width: 768px) {
+                width: 85%;
+                margin: 0 auto;
+                margin-bottom: 40px;
+            }
+
             img{
-                width: 200px;
+                width: 250px;
+                margin-bottom: 10px;
+            }
+
+            p{
+                color: var(--Green-Eliane);
             }
         }
 
@@ -25,6 +41,12 @@ footer{
             display: flex;
             flex-direction: column;
             align-items: start;
+
+            @media (max-width: 768px) {
+                width: 85%;
+                margin: 0 auto;
+                margin-bottom: 40px;
+            }
 
             h3{
                 color: var(--black);
@@ -61,26 +83,27 @@ footer{
                 .email{
                     display: flex;
                     gap: 10px;
-
-                    a{
-                        color: var(--black);
-                    }
+                    width: 100%;
 
                     .icon{
                         color: var(--Blue-Eliane);
+                    }
+
+                    a{
+                        color: var(--black);
                     }
                 }
 
                 .location{
                     display: flex;
                     gap: 10px;
+ 
+                    .icon{
+                        color: var(--Blue-Eliane);
+                    }
 
                     a{
                         color: var(--black);
-                    }
-
-                    .icon{
-                        color: var(--Blue-Eliane);
                     }
                 }
 
@@ -109,6 +132,12 @@ footer{
             flex-direction: column;
             align-items: center;
 
+            @media (max-width: 768px) {
+                width: 85%;
+                margin: 0 auto;
+                align-items: flex-start;
+            }
+
             h3{
                 color: var(--black);
                 font-weight: 600;
@@ -117,12 +146,13 @@ footer{
             .bottom2{
                 display: flex;
                 flex-direction: column;
-                align-items: start;
+                align-items: flex-start;
                 gap: 10px;
                 margin-top: 30px;
 
                 li{
                     color: var(--black);
+                    font-weight: 500;
                 }
             }
         }
@@ -140,11 +170,24 @@ footer{
 
         p{
             color: var(--Light-Cinzel);
+
+            @media (max-width: 768px) {
+                font-size: 14px;
+            }
+
+            @media (max-width: 425px) {
+                font-size: 12px;
+            }
+
+            @media (max-width: 375px) {
+                font-size: 10px;
+            }
+
+            a{
+                color: var(--black);
+                text-decoration: none;
+            }
         }
 
-        a{
-            color: var(--black);
-            text-decoration: none;
-        }
     }
 }

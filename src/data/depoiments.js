@@ -1,13 +1,13 @@
 export const depoimentsStudent = [
     {
         id: 1,
-        video: "/Depoimentos/Depo1.mp4",
+        video: "/Depoimentos/video4.mp4",
         name: "Fulana1"
     },
     {
         id: 2,
-        video: "/Depoimentos/Depo2.mp4",
-        name: "Fulana2"
+        video: "/Depoimentos/video5.mp4",
+        name: "Viviane nao sei de que"
     },
     {
         id: 3,

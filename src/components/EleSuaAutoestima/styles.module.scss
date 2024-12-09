@@ -39,17 +39,16 @@ section{
         max-width: 100%;
         width: 100%;
         position: absolute;
-        z-index: 2;
         position: fixed;
         z-index: 5;
 
         @media (max-width: 768px) {
-                 
+            
         }
 
         &.scrolled {
-            background-color: var(--Brown-transparent); // Cor quando o header está rolado
-          }
+            background-color: var(--Brown-transparent);
+        }
         
         .nav {
             display: flex;
@@ -63,7 +62,7 @@ section{
                 gap: 10px;
             }
     
-            img {
+            .logo {
                 width: 200px;
 
                 @media (max-width: 1024px) {

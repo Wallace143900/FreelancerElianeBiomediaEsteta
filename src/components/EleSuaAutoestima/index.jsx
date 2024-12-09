@@ -46,11 +46,11 @@ export const EleveAutoestima = () => {
             <img src={currentImage} alt="Foto Principal" />
             <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
                 <nav className={styles.nav}>
-                    <img src={Logo} alt="Logo Dra.Eliane" />
+                    <img src={Logo} alt="Logo Dra.Eliane" className={styles.logo} />
                     <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}>
-                        <button className={styles.menuButton} onClick={toggleMenu}>
+                        {/* <button className={styles.menuButton} onClick={toggleMenu}>
                             {isMenuOpen ? <FaTimes size={30} /> : <IoMenu size={30} />}
-                        </button>
+                        </button> */}
                         <li className="paragraphy">INÍCIO</li>
                         <li className="paragraphy">ANTES E DEPOIS</li>
                         <li className="paragraphy">CURSOS E SERVIÇOS</li>

@@ -10,6 +10,7 @@ export const Footer = () => {
             <div className={styles.container}>
                 <div className={styles.left}>
                     <img src={logo} alt="Logo Footer" />
+                    <p className="paragraphy">Aqui você realmente é amada</p>
                 </div>
                 <div className={styles.middle}>
                     <h3 className="title3">Contato</h3>
@@ -24,7 +25,7 @@ export const Footer = () => {
                         </div>
                         <div className={styles.location}>
                             <IoLocationOutline size={50} className={styles.icon}/>
-                            <p className="paragraphy">Avenida das Américas 3120, bloco 4, sala 201 (shopping Bayside Barra da Tijuca)</p>
+                            <p className="paragraphy">Avenida das Américas 3120, bloco 4, sala 201 - Rio de Janeiro/RJ</p>
                         </div>
                         <div className={styles.insta}>
                             <FaInstagram size={22} className={styles.icon}/>
