@@ -18,7 +18,6 @@ const DescriptionCourse = ({ title, content, content2, isService }) => {
       </button>
       {isOpen && (
         <div className={styles.courseContent}>
-          {/* Renderiza o content com o estilo adequado (700 para cursos, 500 para serviços) */}
           <p 
             className={`paragraphy ${isService ? styles.serviceDescription : styles.courseDays}`} 
             id={styles.p}

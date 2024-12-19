@@ -19,9 +19,8 @@ export const EleveAutoestima = () => {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
-        // Função para verificar largura da janela e ajustar a imagem
         const handleResize = () => {
-            setCurrentImage(window.innerWidth <= 450 ? fotoPrincipalMobile : fotoPrincipal);
+            setCurrentImage(window.innerWidth <= 590 ? fotoPrincipalMobile : fotoPrincipal);
         };
 
         window.addEventListener("resize", handleResize);
@@ -31,7 +30,6 @@ export const EleveAutoestima = () => {
     }, []);
 
     useEffect(() => {
-        // Função para verificar rolagem da página
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
         };
@@ -48,9 +46,6 @@ export const EleveAutoestima = () => {
                 <nav className={styles.nav}>
                     <img src={Logo} alt="Logo Dra.Eliane" className={styles.logo} />
                     <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}>
-                        {/* <button className={styles.menuButton} onClick={toggleMenu}>
-                            {isMenuOpen ? <FaTimes size={30} /> : <IoMenu size={30} />}
-                        </button> */}
                         <li className="paragraphy">INÍCIO</li>
                         <li className="paragraphy">ANTES E DEPOIS</li>
                         <li className="paragraphy">CURSOS E SERVIÇOS</li>

@@ -134,7 +134,7 @@ const OfCourse = () => {
           title={course.title}
           content={course.content}
           content2={course.content2}
-          isService={false} // cursos não recebem o font-weight de 500
+          isService={false}
         />
       ))}
       <h1 className='title1'>Serviços</h1>
@@ -144,7 +144,7 @@ const OfCourse = () => {
           key={index}
           title={service.name}
           content={service.description}
-          isService={true} // serviços recebem o font-weight de 500
+          isService={true}
         />
       ))}
       <button className={styles.button}>

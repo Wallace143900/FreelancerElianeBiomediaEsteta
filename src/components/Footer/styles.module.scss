@@ -1,6 +1,7 @@
 footer{
     width: 100%;
     height: auto;
+    background-color: black;
 
     .container{
         width: 85%;
@@ -9,8 +10,8 @@ footer{
         justify-content: space-evenly;
         align-items: center;
         flex-wrap: wrap;
-        margin-top: 40px;
-        margin-bottom: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
 
         @media (max-width: 768px) {
             flex-direction: column;
@@ -83,14 +84,13 @@ footer{
                 .email{
                     display: flex;
                     gap: 10px;
-                    width: 100%;
 
                     .icon{
                         color: var(--Blue-Eliane);
                     }
 
-                    a{
-                        color: var(--black);
+                    p{
+                        color: var(--Light-Cinzel);
                     }
                 }
 
@@ -102,8 +102,8 @@ footer{
                         color: var(--Blue-Eliane);
                     }
 
-                    a{
-                        color: var(--black);
+                    p{
+                        color: var(--Light-Cinzel);
                     }
                 }
 

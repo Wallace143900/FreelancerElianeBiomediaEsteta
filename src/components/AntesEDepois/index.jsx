@@ -23,7 +23,6 @@ export const AntesEDepoisResults = () => {
             handleNext();
         }, 5000);
 
-        // Limpa o intervalo ao desmontar o componente
         return () => clearInterval(interval);
     }, []);
 
@@ -53,7 +52,6 @@ export const AntesEDepoisResults = () => {
                         <p className="paragraphy" id={styles.paragrafo}>{AntesDepois[currentIndex].name}</p>
                     </div>
                 </div>
-                {/* Nome da imagem fora do carrossel */}
                 <div className={styles.right}>
                     <div className={styles.topHeader}>
                         <div className={styles.line}></div>

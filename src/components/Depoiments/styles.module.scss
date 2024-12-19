@@ -222,15 +222,15 @@
           color: #007bff;
         }
 
-        &.prev {
-          left: 0;
-          top: 50%;
+        &#prev {
+          left: 135px;
+          top: 25%;
           transform: translateY(-50%);
         }
 
-        &.next {
-          right: 0;
-          top: 50%;
+        &#next {
+          right: 150px;
+          top: 25%;
           transform: translateY(-50%);
         }
       }
@@ -260,7 +260,7 @@
           height: 50%;
           border-radius: 10px;
           background: var(--Light-Cinzel);
-          box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
           
           @media (max-width: 768px) {
             width: 60%;

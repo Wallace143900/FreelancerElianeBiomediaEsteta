@@ -92,7 +92,7 @@ export const Depoiments = () => {
                 </div>
                 <h2 className="title2">Confira alguns depoimentos em vídeo</h2>
                 <div className={styles.carouselContainer}>
-                    <button onClick={handlePrev} className={styles.carouselButton}>◀</button>
+                    <button onClick={handlePrev} className={styles.carouselButton} id={styles.prev}>◀</button>
                     <div className={styles.carousel} style={{ '--current-index': currentIndex }}>
                         {depoimentsStudent.map((depoiment, index) => (
                             <div
@@ -106,7 +106,7 @@ export const Depoiments = () => {
                             </div>
                         ))}
                     </div>
-                    <button onClick={handleNext} className={styles.carouselButton}>▶</button>
+                    <button onClick={handleNext} className={styles.carouselButton} id={styles.next}>▶</button>
                 </div>
             </div>
         </section>
