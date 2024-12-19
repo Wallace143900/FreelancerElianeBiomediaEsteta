@@ -10,33 +10,16 @@ import styles from './styles.module.scss';
 
 export const Depoiments = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const elementsRef = useRef(new Set());
+    const [isPaused, setIsPaused] = useState(false);
+    const videosRef = useRef([]);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add(styles.show);
-                    } else {
-                        entry.target.classList.remove(styles.show);
-                    }
-                });
-            },
-            { threshold: 0.1 }
-        );
-
-        elementsRef.current.forEach((el) => observer.observe(el));
-
-        return () => observer.disconnect();
-    }, []);
-
-    useEffect(() => {
+        if (isPaused) return;
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % depoimentsStudent.length);
-        }, 5000);
+        }, 10000);
         return () => clearInterval(interval);
-    }, []);
+    }, [isPaused, currentIndex]);
 
     const handlePrev = () => {
         setCurrentIndex((prevIndex) =>
@@ -48,9 +31,26 @@ export const Depoiments = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % depoimentsStudent.length);
     };
 
-    const addToRef = (el) => {
-        if (el && !elementsRef.current.has(el)) {
-            elementsRef.current.add(el);
+    const handleVideoPlay = (index) => {
+        // Pause todos os outros vídeos
+        videosRef.current.forEach((video, i) => {
+            if (video && i !== index) {
+                video.pause();
+            }
+        });
+        setIsPaused(true);
+    };
+
+    const handleVideoPause = () => {
+        setIsPaused(false);
+    };
+
+    const addVideoRef = (el, index) => {
+        if (el) {
+            videosRef.current[index] = el;
+            el.addEventListener('play', () => handleVideoPlay(index));
+            el.addEventListener('pause', handleVideoPause);
+            el.addEventListener('ended', handleVideoPause);
         }
     };
 
@@ -59,14 +59,14 @@ export const Depoiments = () => {
             <h1 className="title1">Depoimentos Sobre Os Cursos</h1>
             <div className={styles.container}>
                 <div className={styles.videoTop}>
-                    <div className={styles.video} ref={addToRef}>
+                    <div className={styles.video}>
                         <video controls src={ElianeVideo} className={styles.ElianeVideo} />
                         <div className={styles.videoBottom}>
                             <img src={foto1} alt="Foto de um ícone" />
                             <p className="paragraphy">Assista meu depoimento</p>
                         </div>
                     </div>
-                    <div className={styles.video} ref={addToRef}>
+                    <div className={styles.video}>
                         <video controls src={video} className={styles.CourseVideo} />
                         <div className={styles.videoBottom}>
                             <img src={foto2} alt="Foto de um ícone" />
@@ -77,7 +77,7 @@ export const Depoiments = () => {
                 <h3 className="title3">Confira algumas imagens de como são nossos cursos!</h3>
                 <div className={styles.containerImages}>
                     {photoCourse.map((depo) => (
-                        <div key={depo.id} className={styles.images} ref={addToRef}>
+                        <div key={depo.id} className={styles.images}>
                             <img src={depo.image} alt="Imagens dos cursos" />
                         </div>
                     ))}
@@ -85,7 +85,7 @@ export const Depoiments = () => {
                 <h3 className="title3">Sobre algumas turmas formadas</h3>
                 <div className={styles.certifateImages}>
                     {CertificateCourse.map((certificado) => (
-                        <div key={certificado.id} className={styles.images} ref={addToRef}>
+                        <div key={certificado.id} className={styles.images}>
                             <img src={certificado.image} alt="Imagens das turmas formadas" />
                         </div>
                     ))}
@@ -101,7 +101,11 @@ export const Depoiments = () => {
                                     index === currentIndex ? styles.active : ''
                                 }`}
                             >
-                                <video controls src={depoiment.video} />
+                                <video
+                                    controls
+                                    src={depoiment.video}
+                                    ref={(el) => addVideoRef(el, index)}
+                                />
                                 <p className="paragraphy">{depoiment.name}</p>
                             </div>
                         ))}
