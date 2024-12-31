@@ -16,17 +16,14 @@ const DescriptionCourse = ({ title, content, content2, isService }) => {
           {isOpen ? '▲' : '▼'}
         </span>
       </button>
-      {isOpen && (
+      <div className={`${styles.courseContentWrapper} ${isOpen ? styles.open : ''}`}>
         <div className={styles.courseContent}>
-          <p 
-            className={`paragraphy ${isService ? styles.serviceDescription : styles.courseDays}`} 
-            id={styles.p}
-          >
+          <p className={`${isService ? styles.serviceDescription : styles.courseDays}`} id={styles.p}>
             {content}
           </p>
-          {content2 && <p className='paragraphy' id={styles.pp}>{content2}</p>}
+          {content2 && <p className={styles.courseContent} id={styles.pp}>{content2}</p>}
         </div>
-      )}
+      </div>
     </div>
   );
 };

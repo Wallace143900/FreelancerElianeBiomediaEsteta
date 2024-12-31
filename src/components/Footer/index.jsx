@@ -46,7 +46,7 @@ export const Footer = () => {
                 </div>
             </div>
             <div className={styles.reservado}>
-                <p className="paragraphy">&copy; 2024 <a href="https://www.instagram.com/draelianecristina/" target="_blank">Eliane Cristina</a> Todos os Direitos Reservados | Desenvolvido por <a href="https://www.instagram.com/wallacedeveloper95/" target="_blank">Wallace Menezes</a></p>
+                <p className="paragraphy">&copy; 2024 Todos os Direitos Reservados <a href="https://www.instagram.com/draelianecristina/" target="_blank">Eliane Cristina</a> | Desenvolvido por <a href="https://www.instagram.com/wallacedeveloper95/" target="_blank">Wallace Menezes</a></p>
             </div>
         </footer>
     )

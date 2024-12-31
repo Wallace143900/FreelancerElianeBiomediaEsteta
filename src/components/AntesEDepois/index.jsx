@@ -42,14 +42,14 @@ export const AntesEDepoisResults = () => {
                             ))}
                         </div>
                         <button className={styles.prevButton} onClick={handlePrev}>
-                            <FaArrowLeft size={20} />
+                            <FaArrowLeft size={20} className={styles.iconPrev} />
                         </button>
                         <button className={styles.nextButton} onClick={handleNext}>
-                            <FaArrowRight size={20} />
+                            <FaArrowRight size={20} className={styles.iconNext} />
                         </button>
                     </div>
                     <div className={styles.imageName}>
-                        <p className="paragraphy" id={styles.paragrafo}>{AntesDepois[currentIndex].name}</p>
+                        <p className="paragraphy2" id={styles.Paragrafo}>{AntesDepois[currentIndex].name}</p>
                     </div>
                 </div>
                 <div className={styles.right}>

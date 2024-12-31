@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import Logo from "../../../public/Dra.Eliane_Brand/logo_eliane_header.png";
 import { FaWhatsapp, FaTimes, FaInstagram } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
@@ -8,7 +8,6 @@ import fotoPrincipal from "../../../public/Dra.Eliane/fotoPrincipal.png";
 import fotoPrincipalMobile from "../../../public/Dra.Eliane/fotoMobile.png";
 
 export const EleveAutoestima = () => {
-
     const { toggleMenu, isMenuOpen } = useContext(UserContext);
 
     const whatsappMessage = "Olá, gostaria de de saber mais sobre seus cursos e serviços para agendar um horário.";
@@ -17,6 +16,8 @@ export const EleveAutoestima = () => {
 
     const [currentImage, setCurrentImage] = useState(fotoPrincipal);
     const [isScrolled, setIsScrolled] = useState(false);
+
+    const menuRef = useRef(null);
 
     useEffect(() => {
         const handleResize = () => {
@@ -39,13 +40,32 @@ export const EleveAutoestima = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                if (isMenuOpen) {
+                    toggleMenu();
+                }
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [isMenuOpen, toggleMenu]);
+
     return (
         <section>
-            <img src={currentImage} alt="Foto Principal" />
+            <img src={currentImage} alt="Foto Principal" className={styles.mainImage} />
             <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
                 <nav className={styles.nav}>
                     <img src={Logo} alt="Logo Dra.Eliane" className={styles.logo} />
-                    <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}>
+                    <ul
+                        ref={menuRef}
+                        className={`${styles.menu} ${isMenuOpen ? `${styles.menuOpen} ${styles.menuOpened}` : ''}`}
+                    >
                         <li className="paragraphy">INÍCIO</li>
                         <li className="paragraphy">ANTES E DEPOIS</li>
                         <li className="paragraphy">CURSOS E SERVIÇOS</li>
@@ -54,11 +74,11 @@ export const EleveAutoestima = () => {
                         <li className="paragraphy">CONTATO</li>
                     </ul>
                     <div className={styles.iconContainer}>
-                        <a href={whatsappURL} className={styles.whatsappLink} target="_blank">
+                        <a href={whatsappURL} className={styles.whatsappLink} target="_blank" rel="noopener noreferrer">
                             <FaWhatsapp className={styles.iconZap} size={25} />
                         </a>
-                        <a href="https://www.instagram.com/draelianecristina/?hl=pt" className={styles.whatsappLink} target="_blank">
-                            <FaInstagram className={styles.iconZap} size={25} />
+                        <a href="https://www.instagram.com/draelianecristina/?hl=pt" className={styles.whatsappLink} target="_blank" rel="noopener noreferrer">
+                            <FaInstagram className={styles.iconInsta} size={25} />
                         </a>
                     </div>
                     <button className={styles.menuButton} onClick={toggleMenu}>
@@ -69,7 +89,7 @@ export const EleveAutoestima = () => {
             </header>
             <div className={styles.top}>
                 <div className={styles.lineTop}></div>
-                <a href="https://www.instagram.com/draelianecristina/?hl=pt" target="_blank" className="paragraphy">
+                <a href="https://www.instagram.com/draelianecristina/?hl=pt" target="_blank" rel="noopener noreferrer" className="paragraphy">
                     @draelianecristina <FaInstagram className={styles.iconZap} size={25} />
                 </a>
             </div>

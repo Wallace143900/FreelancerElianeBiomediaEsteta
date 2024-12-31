@@ -1,4 +1,28 @@
-section{
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+section {
     width: 100%;
     height: auto;
     display: flex;
@@ -6,26 +30,34 @@ section{
     align-items: center;
     background: white;
 
-    .container{
+    .container {
         width: 85%;
         height: auto;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
+        position: relative;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        
+        &.animate {
+            opacity: 1;
+            animation: slideIn 2s ease-out;
+        }
 
         @media (max-width: 768px) {
             flex-direction: column;
             align-items: center;
         }
 
-        .left{
+        .left {
             width: 45%;
             margin-top: 80px;
 
             @media (max-width: 768px) {
                 width: 90%;
             }
-    
+
             .topHeader {
                 display: flex;
                 justify-content: flex-start;
@@ -38,23 +70,42 @@ section{
                 @media (max-width: 768px) {
                     justify-content: center;
                 }
-        
+
                 .line {
                     width: 20%;
                     height: 2px;
                     background: var(--Blue-Eliane);
                 }
-        
+
                 h3 {
                     font-size: 30px;
                     font-family: var(--font-yellowtail);
+                    display: inline-flex;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+
+                    @keyframes typing {
+                        from {
+                            width: 0;
+                        }
+                        to {
+                            width: 70%;
+                        }
+                    }
+
+                    @keyframes blink {
+                        50% {
+                            border-color: transparent;
+                        }
+                    }
                 }
             }
 
-            .I{
+            .I {
                 margin-bottom: 40px;
 
-                h2{
+                h2 {
                     font-size: 45px;
 
                     @media (max-width: 768px) {
@@ -63,9 +114,8 @@ section{
                 }
             }
 
-            .eu{
-
-                p{
+            .eu {
+                p {
                     margin-top: 20px;
                     font-size: 15px;
 
@@ -74,17 +124,17 @@ section{
                     }
                 }
             }
-
         }
-        
-        .AboutMe{
+
+        .AboutMe {
             width: 45%;
-            
+            animation: slideIn 2s ease-out;
+
             @media (max-width: 768px) {
                 width: 85%;
             }
-            
-            img{
+
+            img {
                 height: 100%;
 
                 @media (max-width: 1024px) {
@@ -97,8 +147,8 @@ section{
             }
         }
     }
-    
-    .bottom{
+
+    .bottom {
         width: 85%;
         height: 180px;
         margin: 0 auto;
@@ -118,7 +168,7 @@ section{
             gap: 40px;
         }
 
-        .missao{
+        .missao {
             width: 45%;
             display: flex;
             flex-direction: column;
@@ -128,25 +178,25 @@ section{
                 width: 85%;
                 margin: 0 auto;
             }
-    
-            img{
+
+            img {
                 width: 100px;
                 height: 100%;
             }
-    
-            h3{
+
+            h3 {
                 margin-top: 20px;
                 margin-bottom: 20px;
                 color: var(--Green-Eliane);
             }
 
-            p{
+            p {
                 font-size: 15px;
                 text-align: center;
             }
         }
-    
-        .valor{
+
+        .valor {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -157,22 +207,21 @@ section{
                 margin: 0 auto;
             }
 
-            img{
+            img {
                 width: 100px;
                 height: 100%;
             }
-    
-            h3{
+
+            h3 {
                 margin-top: 20px;
                 margin-bottom: 20px;
                 color: var(--Green-Eliane);
             }
-            
-            p{
+
+            p {
                 font-size: 15px;
                 text-align: center;
             }
         }
     }
-
 }
