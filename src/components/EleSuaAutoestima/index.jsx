@@ -24,9 +24,7 @@ export const EleveAutoestima = () => {
         if (section) {
             section.scrollIntoView({ behavior: "smooth" });
         }
-        setTimeout(() => {
-            toggleMenu();
-        }, 500); // Fecha o modal após a navegação
+        toggleMenu(); // Fecha o modal após a navegação
     };
 
     useEffect(() => {
