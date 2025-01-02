@@ -33,7 +33,7 @@ export const AboutMe = () => {
 
     return (
         <section ref={sectionRef}>
-            <div className={`${styles.container} ${isVisible ? styles.animate : ''}`}>
+            <div className={`${styles.container} ${isVisible ? styles.animate : ''}`} id="sobreMim">
                 <div className={styles.left}>
                     <div className={styles.topHeader}>
                         <div className={styles.line}></div>

@@ -7,7 +7,7 @@ import logo from "../../../public/Dra.Eliane_Brand/logo_eliane_footer.png";
 export const Footer = () => {
     return (
         <footer>
-            <div className={styles.container}>
+            <div className={styles.container} id="contato">
                 <div className={styles.left}>
                     <img src={logo} alt="Logo Footer" />
                     <p className="paragraphy">Aqui você realmente é amada</p>

@@ -12,12 +12,12 @@ export const depoimentsStudent = [
     {
         id: 3,
         video: "/Depoimentos/video4.mp4",
-        name: "Fulana1"
+        name: "Mary"
     },
     {
         id: 4,
         video: "/Depoimentos/video5.mp4",
-        name: "Viviane nao sei de que"
+        name: "Viviane"
     },
     {
         id: 5,

@@ -19,6 +19,16 @@ export const EleveAutoestima = () => {
 
     const menuRef = useRef(null);
 
+    const handleNavigation = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+        setTimeout(() => {
+            toggleMenu();
+        }, 500); // Fecha o modal após a navegação
+    };
+
     useEffect(() => {
         const handleResize = () => {
             setCurrentImage(window.innerWidth <= 590 ? fotoPrincipalMobile : fotoPrincipal);
@@ -57,7 +67,7 @@ export const EleveAutoestima = () => {
     }, [isMenuOpen, toggleMenu]);
 
     return (
-        <section>
+        <section id="inicio">
             <img src={currentImage} alt="Foto Principal" className={styles.mainImage} />
             <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
                 <nav className={styles.nav}>
@@ -66,12 +76,12 @@ export const EleveAutoestima = () => {
                         ref={menuRef}
                         className={`${styles.menu} ${isMenuOpen ? `${styles.menuOpen} ${styles.menuOpened}` : ''}`}
                     >
-                        <li className="paragraphy">INÍCIO</li>
-                        <li className="paragraphy">ANTES E DEPOIS</li>
-                        <li className="paragraphy">CURSOS E SERVIÇOS</li>
-                        <li className="paragraphy">SOBRE MIM</li>
-                        <li className="paragraphy">DEPOIMENTOS</li>
-                        <li className="paragraphy">CONTATO</li>
+                        <li className="paragraphy" onClick={() => handleNavigation("inicio")}>INÍCIO</li>
+                        <li className="paragraphy" onClick={() => handleNavigation("antesDepois")}>ANTES E DEPOIS</li>
+                        <li className="paragraphy" onClick={() => handleNavigation("cursosServicos")}>CURSOS E SERVIÇOS</li>
+                        <li className="paragraphy" onClick={() => handleNavigation("sobreMim")}>SOBRE MIM</li>
+                        <li className="paragraphy" onClick={() => handleNavigation("depoimentos")}>DEPOIMENTOS</li>
+                        <li className="paragraphy" onClick={() => handleNavigation("contato")}>CONTATO</li>
                     </ul>
                     <div className={styles.iconContainer}>
                         <a href={whatsappURL} className={styles.whatsappLink} target="_blank" rel="noopener noreferrer">

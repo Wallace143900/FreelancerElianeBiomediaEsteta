@@ -356,7 +356,7 @@ section{
             width: 80%;
             height: 50%;
             background: linear-gradient(-1855deg, var(--Yellow-Eliane), var(--Brown-Eliane));
-            opacity: 0.8;
+            opacity: 0.9;
             gap: 30px;
             flex-direction: column;
             justify-content: center;
@@ -395,7 +395,7 @@ section{
             li {
               color: var(--black);
               font-size: 24px;
-              border-bottom: 2px solid transparent;
+              border-bottom: 1px solid transparent;
       
               &:hover {
                 border-bottom: 1px solid var(--Light-Cinzel);

@@ -55,7 +55,7 @@ export const Depoiments = () => {
     };
 
     return (
-        <section className={styles.section}>
+        <section className={styles.section} id="depoimentos">
             <h1 className="title1">Depoimentos Sobre Os Cursos</h1>
             <div className={styles.container}>
                 <div className={styles.videoTop}>

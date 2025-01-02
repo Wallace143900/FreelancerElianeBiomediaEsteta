@@ -125,7 +125,7 @@ const OfCourse = () => {
   const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <div className={styles.ofCourseContainer}>
+    <div className={styles.ofCourseContainer} id="cursosServicos">
       <h1 className='title1'>Cursos</h1>
       <p className='paragraphy'>Confira os cursos e treinamentos que ministramos:</p>
       {courseData.map((course, index) => (

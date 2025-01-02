@@ -27,7 +27,7 @@ export const AntesEDepoisResults = () => {
     }, []);
 
     return (
-        <section className={styles.section}>
+        <section className={styles.section} id="antesDepois">
             <div className={styles.container}>
                 <div className={styles.photo}>
                     <div className={styles.carousel}>
