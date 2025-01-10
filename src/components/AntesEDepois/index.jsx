@@ -5,18 +5,40 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 export const AntesEDepoisResults = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [virtualIndex, setVirtualIndex] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
 
     const handlePrev = () => {
-        setCurrentIndex((prevIndex) =>
-            prevIndex === 0 ? AntesDepois.length - 1 : prevIndex - 1
-        );
+        if (isTransitioning) return;
+        setIsTransitioning(true);
+        setCurrentIndex((prevIndex) => prevIndex - 1);
     };
 
     const handleNext = () => {
-        setCurrentIndex((prevIndex) =>
-            prevIndex === AntesDepois.length - 1 ? 0 : prevIndex + 1
-        );
+        if (isTransitioning) return;
+        setIsTransitioning(true);
+        setCurrentIndex((prevIndex) => prevIndex + 1);
     };
+
+    const transitionEndHandler = () => {
+        setIsTransitioning(false);
+
+        if (currentIndex === -1) {
+            setCurrentIndex(AntesDepois.length - 1);
+        } else if (currentIndex === AntesDepois.length) {
+            setCurrentIndex(0);
+        }
+    };
+
+    useEffect(() => {
+        if (currentIndex === -1) {
+            setVirtualIndex(AntesDepois.length - 1);
+        } else if (currentIndex === AntesDepois.length) {
+            setVirtualIndex(0);
+        } else {
+            setVirtualIndex(currentIndex);
+        }
+    }, [currentIndex]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -33,13 +55,28 @@ export const AntesEDepoisResults = () => {
                     <div className={styles.carousel}>
                         <div
                             className={styles.slide}
-                            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                            style={{
+                                transform: `translateX(-${
+                                    (currentIndex + 1) * 100
+                                }%)`,
+                                transition: isTransitioning ? "transform 0.5s ease-in-out" : "none",
+                            }}
+                            onTransitionEnd={transitionEndHandler}
                         >
+                            <div className={styles.carouselItem}>
+                                <img
+                                    src={AntesDepois[AntesDepois.length - 1].image}
+                                    alt={AntesDepois[AntesDepois.length - 1].name}
+                                />
+                            </div>
                             {AntesDepois.map((result) => (
                                 <div key={result.id} className={styles.carouselItem}>
                                     <img src={result.image} alt={result.name} />
                                 </div>
                             ))}
+                            <div className={styles.carouselItem}>
+                                <img src={AntesDepois[0].image} alt={AntesDepois[0].name} />
+                            </div>
                         </div>
                         <button className={styles.prevButton} onClick={handlePrev}>
                             <FaArrowLeft size={20} className={styles.iconPrev} />
@@ -49,7 +86,9 @@ export const AntesEDepoisResults = () => {
                         </button>
                     </div>
                     <div className={styles.imageName}>
-                        <p className="paragraphy2" id={styles.Paragrafo}>{AntesDepois[currentIndex].name}</p>
+                        <p className="paragraphy2" id={styles.Paragrafo}>
+                            {AntesDepois[virtualIndex]?.name}
+                        </p>
                     </div>
                 </div>
                 <div className={styles.right}>

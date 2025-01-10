@@ -17,7 +17,7 @@ export const AboutMe = () => {
                     setIsVisible(false);
                 }
             },
-            { threshold: 0.1 } // A animação é disparada quando 50% da seção estiver visível
+            { threshold: 0.1 }
         );
 
         if (sectionRef.current) {

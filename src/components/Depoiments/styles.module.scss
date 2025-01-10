@@ -169,7 +169,7 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
 
         &:hover{
-          transform: scale(1.2); /* Aumenta 10% */
+          transform: scale(1.2);
           box-shadow: 6px 6px 15px rgba(0, 0, 0, 9.9);
         }
 
@@ -184,7 +184,7 @@
           height: 250px;
           
           &:hover{
-            transform: scale(1.1); /* Aumenta 10% */
+            transform: scale(1.1);
             box-shadow: 6px 6px 15px rgba(0, 0, 0, 9.9);
           }
         }
@@ -213,7 +213,7 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
 
         &:hover{
-          transform: scale(1.2); /* Aumenta 10% */
+          transform: scale(1.2);
           box-shadow: 6px 6px 15px rgba(0, 0, 0, 9.9);
         }
 
@@ -427,7 +427,7 @@
 
         video {
           width: 50%;
-          height: 50%;
+          height: 45%;
           border-radius: 10px;
           background: var(--Light-Cinzel);
           box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);

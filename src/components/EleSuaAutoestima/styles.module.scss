@@ -38,7 +38,7 @@ section{
     .header {
         max-width: 100%;
         width: 100%;
-        position: fixed; /* Atualizado para evitar a sobreposição de 'absolute' */
+        position: fixed;
         z-index: 5;
       
         &.scrolled {

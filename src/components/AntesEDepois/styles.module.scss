@@ -163,12 +163,38 @@
                     justify-content: flex-start;
                     align-items: center;
 
-                    @media (max-width: 1050px) {
+                    @media (max-width: 1401px) {
+                        width: 10%;
+                    }
+
+                    @media (max-width: 1400px) {
+                        width: 7%;
+                    }
+
+                    @media (max-width: 1110px) {
                         width: 8%;
+                    }
+
+                    @media (max-width: 944px) {
+                        width: 9%;
+                    }
+
+                    @media (max-width: 818px) {
+                        width: 10%;
+                    }
+
+                    @media (max-width: 768px) {
+                        width: 10%;
+                        height: 35px;
                     }
                     
                     @media (max-width: 768px) {
                         width: 10%;
+                        height: 35px;
+                    }
+
+                    @media (max-width: 709px) {
+                        width: 12%;
                         height: 35px;
                     }
 

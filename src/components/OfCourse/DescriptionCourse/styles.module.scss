@@ -180,7 +180,7 @@
   transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
 
   &.open {
-    max-height: 500px; /* Ajuste conforme necessário */
+    max-height: 500px;
     opacity: 1;
   }
 }

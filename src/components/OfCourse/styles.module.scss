@@ -104,6 +104,7 @@
     &:hover{
       background: linear-gradient(-1855deg, var(--Blue-Eliane), var(--Green-Eliane));
       transition: 0.3s;
+      transform: scale(1.09);
     }
 
     @media (max-width: 1033px) {

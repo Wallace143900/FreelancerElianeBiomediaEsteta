@@ -1,42 +1,44 @@
-import React, { useState, useEffect, useRef } from 'react';
-import ElianeVideo from '../../../public/Depoimentos/ElianeVideo.mp4';
-import video from '../../../public/Depoimentos/c8.mp4';
-import { depoimentsStudent } from '../../data/depoiments';
-import { CertificateCourse } from '../../data/certificado';
-import { photoCourse } from '../../data/photoCourse';
+import React, { useState, useEffect, useRef } from "react";
+import ElianeVideo from "../../../public/Depoimentos/ElianeVideo.mp4";
+import video from "../../../public/Depoimentos/c8.mp4";
+import { depoimentsStudent } from "../../data/depoiments";
+import { CertificateCourse } from "../../data/certificado";
+import { photoCourse } from "../../data/photoCourse";
 import foto1 from "../../../public/Dra.Eliane_Brand/foto_botao_3.png";
 import foto2 from "../../../public/Dra.Eliane_Brand/foto_botao_4.png";
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 export const Depoiments = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [virtualIndex, setVirtualIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
     const videosRef = useRef([]);
 
     useEffect(() => {
         if (isPaused) return;
         const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % depoimentsStudent.length);
+            handleNext();
         }, 10000);
         return () => clearInterval(interval);
     }, [isPaused, currentIndex]);
 
     const handlePrev = () => {
-        setCurrentIndex((prevIndex) =>
-            prevIndex === 0 ? depoimentsStudent.length - 1 : prevIndex - 1
-        );
+        setCurrentIndex((prevIndex) => {
+            const newIndex =
+                prevIndex === 0 ? depoimentsStudent.length - 1 : prevIndex - 1;
+            return newIndex;
+        });
     };
 
     const handleNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % depoimentsStudent.length);
+        setCurrentIndex((prevIndex) =>
+            prevIndex === depoimentsStudent.length - 1 ? 0 : prevIndex + 1
+        );
     };
 
     const handleVideoPlay = (index) => {
-        // Pause todos os outros vídeos
         videosRef.current.forEach((video, i) => {
-            if (video && i !== index) {
-                video.pause();
-            }
+            if (video && i !== index) video.pause();
         });
         setIsPaused(true);
     };
@@ -48,11 +50,15 @@ export const Depoiments = () => {
     const addVideoRef = (el, index) => {
         if (el) {
             videosRef.current[index] = el;
-            el.addEventListener('play', () => handleVideoPlay(index));
-            el.addEventListener('pause', handleVideoPause);
-            el.addEventListener('ended', handleVideoPause);
+            el.addEventListener("play", () => handleVideoPlay(index));
+            el.addEventListener("pause", handleVideoPause);
+            el.addEventListener("ended", handleVideoPause);
         }
     };
+
+    useEffect(() => {
+        setVirtualIndex(currentIndex % depoimentsStudent.length);
+    }, [currentIndex]);
 
     return (
         <section className={styles.section} id="depoimentos">
@@ -93,12 +99,12 @@ export const Depoiments = () => {
                 <h2 className="title2">Confira alguns depoimentos em vídeo</h2>
                 <div className={styles.carouselContainer}>
                     <button onClick={handlePrev} className={styles.carouselButton} id={styles.prev}>◀</button>
-                    <div className={styles.carousel} style={{ '--current-index': currentIndex }}>
+                    <div className={styles.carousel} style={{ "--current-index": currentIndex }}>
                         {depoimentsStudent.map((depoiment, index) => (
                             <div
                                 key={depoiment.id}
                                 className={`${styles.carouselItem} ${
-                                    index === currentIndex ? styles.active : ''
+                                    index === currentIndex ? styles.active : ""
                                 }`}
                             >
                                 <video
@@ -106,7 +112,7 @@ export const Depoiments = () => {
                                     src={depoiment.video}
                                     ref={(el) => addVideoRef(el, index)}
                                 />
-                                <p className="paragraphy">{depoiment.name}</p>
+                                <p className="paragraphy">{depoimentsStudent[virtualIndex]?.name}</p>
                             </div>
                         ))}
                     </div>
