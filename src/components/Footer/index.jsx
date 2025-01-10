@@ -5,6 +5,14 @@ import { IoLocationOutline } from "react-icons/io5";
 import logo from "../../../public/Dra.Eliane_Brand/logo_eliane_footer.png";
 
 export const Footer = () => {
+
+    const handleNavigation = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <footer>
             <div className={styles.container} id="contato">
@@ -36,12 +44,12 @@ export const Footer = () => {
                 <div className={styles.right}>
                     <h3 className="title3">Institucional</h3>
                     <ul className={styles.bottom2}>
-                        <li className="paragraphy">Início</li>
-                        <li className="paragraphy">Antes e Depois</li>
-                        <li className="paragraphy">Cursos e Serviços</li>
-                        <li className="paragraphy">Sobre Mim</li>
-                        <li className="paragraphy">Depoimentos</li>
-                        <li className="paragraphy">Contato</li>
+                        <li className="paragraphy" onClick={() => handleNavigation("inicio")}>Início</li>
+                        <li className="paragraphy" onClick={() => handleNavigation("antesDepois")}>Antes e Depois</li>
+                        <li className="paragraphy" onClick={() => handleNavigation("cursosServicos")}>Cursos e Serviços</li>
+                        <li className="paragraphy" onClick={() => handleNavigation("sobreMim")}>Sobre Mim</li>
+                        <li className="paragraphy" onClick={() => handleNavigation("depoimentos")}>Depoimentos</li>
+                        <li className="paragraphy" onClick={() => handleNavigation("contato")}>Contato</li>
                     </ul>
                 </div>
             </div>
